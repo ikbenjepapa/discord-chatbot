@@ -1,0 +1,8 @@
+# Ignore environment variables
+.env
+
+# Ignore text files
+idea for bots.txt
+
+# Ignore Python cache files
+__pycache__/

@@ -1,0 +1,45 @@
+#Discord Bot: AI-Powered Chat Assistant
+Overview
+This Discord bot leverages OpenAI's gpt-4o-mini model to respond intelligently to user queries. Users interact with the bot by mentioning it and using the !ask command.
+
+Features
+AI-Powered Responses: Answers user queries using OpenAI's gpt-4o-mini model.
+Mention-Based Activation: Processes commands only when the bot is mentioned.
+Response Chunking: Handles long AI-generated responses by splitting them into chunks of up to 2,000 characters.
+Custom Status: Displays a helpful status to guide users on how to interact with the bot.
+
+#Usage
+Mention the bot in a channel where it is active.
+Use the !ask command followed by your query:
+Example: @botname !ask What is the capital of Japan?
+The bot responds with AI-generated output.
+
+
+#Logic Breakdown
+Bot Setup:
+Loads DISCORD_BOT_TOKEN and OPENAI_API_KEY from .env.
+Sets a custom status to guide users.
+Message Processing:
+Listens for mentions.
+Processes messages starting with !ask to extract the user query.
+OpenAI Integration:
+Sends user queries to OpenAI's gpt-4o-mini model and retrieves responses.
+Response Handling:
+Splits responses longer than 2,000 characters to comply with Discord's message limit.
+Sends the response chunks sequentially.
+Command Processing:
+Ensures normal commands (if added in the future) are processed correctly.
+
+#Example Scenario
+Input: @botname !ask Translate "good morning" to Spanish.
+Response: Buenos días.
+
+#Troubleshooting
+Bot Not Responding:
+Ensure the bot token and API key are correctly set in .env.
+Verify that the bot has the necessary permissions in the channel.
+Dependencies Not Found:
+Install required libraries using pip install -r requirements.txt.
+Rate Limits:
+Avoid overloading the bot with frequent queries to prevent hitting Discord or OpenAI rate limits.
+This README is concise yet contains all the necessary details for setting up and using the bot effectively!
